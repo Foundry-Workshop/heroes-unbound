@@ -89,14 +89,18 @@ body.theme-light {
   }
 }
 
-#chat-log.champions-now {
-  @include comicFont;
+.champions-now {
+  #chat-log {
+    @include comicFont;
 
-  h1 {
-    @include headerFont
-  }
+    h1 {
+      @include headerFont
+    }
 
-  h2, h3, .message-sender {
-    @include strongFont;
+    h2, h3, .message-sender {
+      //@include strongFont;
+      @include comicFont;
+      font-weight: 700;
+    }
   }
 }

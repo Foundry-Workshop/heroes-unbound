@@ -500,14 +500,15 @@ body.theme-light .champions-now {
   order: unset;
 }
 
-#chat-log.champions-now {
+.champions-now #chat-log {
   font-family: "Comic Neue", serif;
 }
-#chat-log.champions-now h1 {
+.champions-now #chat-log h1 {
   font-family: Bangers, sans-serif;
 }
-#chat-log.champions-now h2, #chat-log.champions-now h3, #chat-log.champions-now .message-sender {
-  font-family: "Comic Helvetic", serif;
+.champions-now #chat-log h2, .champions-now #chat-log h3, .champions-now #chat-log .message-sender {
+  font-family: "Comic Neue", serif;
+  font-weight: 700;
 }
 
 /*# sourceMappingURL=champions-now.css.map */

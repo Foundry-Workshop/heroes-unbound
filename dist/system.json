@@ -39,9 +39,9 @@
   "primaryTokenAttribute": "combat.endurance",
   "secondaryTokenAttribute": "combat.knockout",
   "grid": {
-    "type": 3,
-    "distance": 1,
-    "units": "hex"
+    "type": 5,
+    "distance": 2,
+    "units": "m"
   },
   "flags": {
     "hotReload": {

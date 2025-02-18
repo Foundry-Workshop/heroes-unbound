@@ -2246,3 +2246,7 @@ Hooks.once("ready", () => {
   Hooks.callAll(hooks.ready);
   Utility.notify("System ready.", {consoleOnly: true});
 });
+
+Hooks.once("renderChatLog", (app, html, _options) => {
+  html.addClass("champions-now");
+});
