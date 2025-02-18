@@ -1,0 +1,87 @@
+//#region Bangers
+
+@font-face {
+  font-family: "Bangers";
+  src: url("/systems/champions-now/fonts/Bangers/Bangers-Regular.ttf") format("truetype");
+}
+
+//#endregion
+//#region Comic Neue
+
+@font-face {
+  font-family: "Comic Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/systems/champions-now/fonts/Comic_Neue/ComicNeue-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Comic Neue";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/systems/champions-now/fonts/Comic_Neue/ComicNeue-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Comic Neue";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/systems/champions-now/fonts/Comic_Neue/ComicNeue-BoldItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Comic Neue";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/systems/champions-now/fonts/Comic_Neue/ComicNeue-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Comic Neue";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/systems/champions-now/fonts/Comic_Neue/ComicNeue-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Comic Neue";
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/systems/champions-now/fonts/Comic_Neue/ComicNeue-LightItalic.ttf") format("truetype");
+}
+
+//#endregion
+
+//#region Comic Helvetic
+
+@font-face {
+  font-family: "Comic Helvetic";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/systems/champions-now/fonts/ComicHelvetic/ComicHelvetic_Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Comic Helvetic";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/systems/champions-now/fonts/ComicHelvetic/ComicHelvetic_Light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Comic Helvetic";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/systems/champions-now/fonts/ComicHelvetic/ComicHelvetic_Heavy.otf") format("opentype");
+}
+
+//#endregion

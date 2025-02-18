@@ -1,0 +1,9 @@
+<div class="form-group characteristic">
+    <label class="{{class}}">{{label}}</label>
+    <div class="form-fields">
+        <input type="{{type}}" name="{{name}}" value="{{value}}">
+        <div class="details" {{#if @root.editable}}data-action="characteristicDetails" data-details="{{details}}" data-key="{{key}}" data-label="{{label}}"{{/if}}>
+            {{{enriched}}}
+        </div>
+    </div>
+</div>

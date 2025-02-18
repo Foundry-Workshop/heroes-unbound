@@ -1,0 +1,167 @@
+.champions-now {
+  &.sheet {
+    &.actor {
+      min-width: 560px;
+
+      .xp-input {
+        input {
+          width: 40px;
+        }
+      }
+
+      .tab {
+        overflow: hidden;
+
+        section {
+          overflow-y: auto;
+
+          flex: 1;
+        }
+
+        .form-group {
+          label {
+            max-width: 120px;
+          }
+
+          input {
+            max-width: 40px;
+          }
+        }
+      }
+
+
+      fieldset {
+        border-color: var(--borderColorPrimary);
+        padding: 5px 9px;
+
+        &.vertical {
+          @include flexContainer(column, 5px);
+        }
+
+        &.horizontal {
+          @include flexContainer(row, 5px);
+          justify-content: space-between;
+
+          * {
+            flex: 0 1 fit-content;
+          }
+        }
+      }
+
+      .characteristics {
+        @include flexContainer(column, 3px);
+
+        .characteristic {
+          label {
+            font-size: var(--font-size-14);
+          }
+
+          .details {
+            flex: 5 0 max-content;
+            align-self: stretch;
+
+            &[data-action] {
+              cursor: pointer;
+            }
+          }
+
+          &:has(.details:hover) {
+            background-color: var(--rowBackground);
+          }
+        }
+      }
+
+      .combat {
+
+        .stats {
+          @include flexContainer(column, 5px);
+          flex: 0 1 fit-content;
+
+          .stat {
+            @include flexContainer(row, 5px);
+            flex: 5 0 max-content;
+            align-self: stretch;
+
+            &[data-action] {
+              cursor: pointer;
+            }
+
+            &:has(.details:hover) {
+              background-color: var(--rowBackground);
+            }
+
+            * {
+              flex: 1;
+            }
+
+            > label {
+              flex: 0 1 25%;
+              font-size: var(--font-size-14);
+              align-content: center;
+            }
+
+            > input {
+              flex: 0 1 40px;
+            }
+
+            .details > p {
+              margin: 0;
+            }
+          }
+
+          .horizontal {
+            .stat {
+              input {
+                width: 40px;
+              }
+
+              label {
+                text-align: right;
+              }
+            }
+          }
+
+        }
+
+        .phases {
+          @include flexContainer(row, 5px);
+
+          .phase {
+            @include flexContainer(column, 0px);
+            align-items: center;
+
+            * {
+              padding: 0;
+              margin: 0
+            }
+          }
+        }
+
+        section {
+          @include flexContainer(column, 10px);
+        }
+
+      }
+    }
+
+    input {
+      &.hero-name {
+        font-size: var(--font-size-36);
+        height: 29px;
+        padding: 0 8px 0 0;
+      }
+
+      &.comic-book {
+        font-size: var(--font-size-24);
+        height: auto;
+      }
+
+      &.real-name {
+        font-weight: bold;
+        padding: 0 8px 0 0;
+        //height: 14px;
+      }
+    }
+
+  }
+}

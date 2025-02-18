@@ -1,0 +1,309 @@
+$header-height: 130px;
+
+.champions-now {
+  &.actor {
+    .sheet-header {
+      height: $header-height;
+    }
+  }
+}
+
+.champions-now {
+  &.sheet {
+    font-size: var(--font-size-12);
+
+    .window-content {
+      .button {
+        height: 30px;
+        @include comicFont;
+      }
+    }
+
+    .window-header {
+      &.invert * {
+        filter: invert(1) grayscale(1) brightness(1.3) contrast(9000);
+        mix-blend-mode: luminosity;
+      }
+    }
+
+    // Header container
+    .sheet-header {
+      @include flexContainer(row, 5px);
+
+      // Header content on the left, vertical
+      .header-left {
+        @include flexContainer(column, 10px);
+        flex: 1;
+
+        .header-row {
+          @include flexContainer(row, 5px);
+
+          .header-group {
+            flex: 1 1 fit-content;
+          }
+        }
+      }
+
+      // Header image on the right
+      img {
+        flex: 0 10 max-content;
+        @include size($header-height);
+        border: none;
+        padding: 0;
+        margin: 0;
+
+        &[data-action="editImage"] {
+          cursor: pointer;
+        }
+      }
+
+      .button {
+        flex: 0 5 fit-content;
+      }
+    }
+
+    // Tab navigation
+    .sheet-tabs {
+      &.tabs {
+        justify-content: space-around;
+        gap: 0;
+        padding: 5px 0;
+        margin: 5px 0;
+        border-top: 2px solid var(--color-border-light-tertiary);
+        border-bottom: 2px solid var(--color-border-light-tertiary);
+
+        a {
+          font-size: var(--font-size-14);
+          font-weight: bold;
+
+          display: block;
+          border: 2px solid var(--borderColorPrimary);
+
+          &.active {
+            background-color: var(--bgColorActive);
+            text-shadow: none;
+            //@include insetShadow(var(--buttonShadowActive), 4px, 10px);
+          }
+
+          &:hover:not(.active) {
+            background-color: var(--bgColorHover);
+            text-shadow: none;
+            @include insetShadow(var(--buttonShadowHover), 4px, 10px);
+          }
+        }
+
+        &.hidden {
+          display: none;
+        }
+      }
+    }
+
+    // Tab itself
+    .tab {
+      display: flex;
+      flex: 1;
+    }
+
+    // Container for multiple rows of inputs
+    .input-rows {
+      @include flexContainer(column, 10px);
+      flex: 1;
+
+        /** border **/
+      &.border {
+        padding: 5px 0;
+
+        .input-group {
+          border: 2px solid var(--borderColorPrimary);
+          padding: 8px;
+        }
+
+      }
+        /** /border **/
+    }
+
+    // A row of inputs
+    .input-row {
+      @include flexContainer(row, 5px);
+    }
+
+    // Individual input group
+    .input-group {
+      @include flexContainer(row, 5px);
+
+      &.vertical {
+        flex-direction: column;
+
+        label {
+          flex: 0 100 min-content;
+          @include strongFont;
+        }
+      }
+
+      &.no-gap {
+        gap: 0;
+      }
+
+      label {
+        font-weight: bold;
+        font-size: var(--font-size-14);
+        flex: 10 0 fit-content;
+        display: flex;
+        align-self: normal;
+        align-items: center;
+      }
+
+      input {
+        flex: 0 1 fit-content;
+      }
+
+      prose-mirror {
+        flex: 1;
+
+        .editor-container {
+          flex: 1;
+        }
+
+        .editor-content {
+          padding: 0 4px;
+        }
+      }
+    }
+
+    .sheet-list {
+      @include flexContainer(column);
+      height: 100%;
+
+      .list-name {
+        flex: 1;
+
+        &.end {
+          flex: 0 1 35px;
+          text-align: center;
+          align-items: center;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          justify-content: center;
+          height: 100%;
+          display: flex;
+        }
+      }
+
+      .list-controls {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        height: 100%;
+        flex: 0 1 20px;
+      }
+
+      .list-header, .list-content {
+        gap: 5px;
+      }
+
+      .list-header {
+        @include flexContainer(row, 2px);
+        justify-content: space-between;
+        flex-wrap: nowrap;
+
+        border-bottom: var(--borderColorPrimary) solid 2px;
+
+        padding: 2px 6px;
+
+        .list-name {
+          @include strongFont;
+          font-weight: bold;
+          font-size: var(--font-size-14);
+          text-transform: uppercase;
+        }
+      }
+
+      .list-content {
+        @include flexContainer(column);
+
+        .list-row {
+          @include flexContainer(column);
+
+          padding: 2px 6px;
+
+          .row-content {
+            @include flexContainer(row, 2px);
+            font-size: var(--font-size-14);
+            justify-content: space-between;
+            flex-wrap: nowrap;
+
+            .list-name {
+              //@include strongFont;
+              font-weight: bold;
+
+              &.end {
+                //font-size: var(--font-size-14);
+              }
+            }
+
+
+            &.smaller {
+              font-size: var(--font-size-12);
+              font-weight: normal;
+            }
+
+            p {
+              margin: 0.1rem 0;
+            }
+          }
+        }
+      }
+    }
+
+    .editor {
+      .editor-content {
+        min-height: 100px;
+      }
+    }
+
+    input {
+      line-height: 1rem;
+      height: 24px;
+      padding: 3px 8px;
+
+      &.comic-input {
+        background: none;
+        border: none;
+      }
+    }
+  }
+}
+
+body.theme-light {
+  .champions-now {
+    &.sheet {
+      .sheet-list {
+        .list-content {
+          .list-row {
+            &:nth-of-type(even) {
+              background: transparentize(#111, 0.9);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+body.theme-dark {
+  .champions-now {
+    &.sheet {
+      .sheet-list {
+        .list-content {
+          .list-row {
+            &:nth-of-type(even) {
+              background: transparentize(#302831, 0.6);
+            }
+          }
+        }
+      }
+    }
+  }
+}

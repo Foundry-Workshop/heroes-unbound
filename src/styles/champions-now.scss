@@ -1,0 +1,102 @@
+@import "fonts";
+@import "helpers";
+
+@import "sheets/sheet";
+@import "sheets/hero-sheet";
+@import "sheets/item-sheet";
+
+.champions-now {
+  --rowBackgroundLight: #{transparentize(#302831, 0.6)};
+  --rowBackgroundDark: #{transparentize(#111, 0.9)};
+  --rowBackground: none;
+
+  --borderColorPrimary: #302831;
+  --bgColorActive: var(--color-bg-btn-minor-active);
+  --bgColorHover: var(--color-bg-btn-minor-active);
+  --buttonShadowActive: #645466;
+  --buttonShadowHover: #645466;
+}
+
+body.theme-dark {
+  .champions-now {
+    --rowBackground: var(--rowBackgroundDark);
+    --bgColorActive: #322733;
+    --bgColorHover: #322733;
+  }
+}
+
+body.theme-light {
+  .champions-now {
+    --rowBackground: var(--rowBackgroundLight);
+    --buttonShadowActive: #{transparentize(#ffda7d, 0.5)};
+    --buttonShadowHover: #{transparentize(#ffda7d, 0.5)};
+  }
+}
+
+.champions-now {
+  @include comicFont;
+
+  &#context-menu {
+    z-index: 9999;
+    width: unset;
+  }
+
+  .uppercase {
+    text-transform: uppercase;
+  }
+
+  .bold {
+    font-weight: 700;
+  }
+
+  .fill {
+    flex: 1;
+  }
+
+  .bangers {
+    @include headerFont;
+  }
+
+  .comic {
+    @include comicFont;
+  }
+
+  .center {
+    text-align: center;
+    justify-content: center;
+    justify-self: center;
+    justify-items: center;
+
+    &::placeholder {
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+      justify-self: center;
+      justify-items: center;
+    }
+  }
+
+  &.dice-roll {
+    &.effect-roll {
+      .dice-flavor {
+        font-weight: bold;
+      }
+
+      .dice-result {
+        order: unset;
+      }
+    }
+  }
+}
+
+#chat-log.champions-now {
+  @include comicFont;
+
+  h1 {
+    @include headerFont
+  }
+
+  h2, h3, .message-sender {
+    @include strongFont;
+  }
+}

@@ -1,0 +1,20 @@
+.champions-now {
+  &.sheet {
+    &.item {
+      height: auto;
+      min-width: 350px;
+
+      .header-group {
+        &.sheet-header {
+          input {
+            padding: 0;
+            font-size: var(--font-size-24);
+            text-align: center;
+          }
+
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}

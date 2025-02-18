@@ -1,0 +1,13 @@
+<div class="input-rows">
+    <div class="input-group">
+        <label>{{localize "Champions.Item.Off"}}</label>
+        {{formInput fields.off value=system.off}}
+    </div>
+    <div class="input-group">
+        <label>{{localize "Champions.Item.Def"}}</label>
+        {{formInput fields.def value=system.def}}
+    </div>
+    <div class="input-group vertical fill">
+        {{formInput fields.description value=system.description enriched=enrichment.system.description}}
+    </div>
+</div>

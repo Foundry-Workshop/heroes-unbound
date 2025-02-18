@@ -1,0 +1,61 @@
+{
+  "id": "champions-now",
+  "title": "Champions Now",
+  "version": "<<autoreplaced>>",
+  "url": "<<autoreplaced>>",
+  "manifest": "<<autoreplaced>>",
+  "download": "<<autoreplaced>>",
+  "readme": "<<autoreplaced>>",
+  "changelog": "<<autoreplaced>>",
+  "bugs": "<<autoreplaced>>",
+  "description": "Unofficial system for the Champions Now / Heroes Unbound TTRPG.",
+  "authors": [
+    {
+      "name": "Forien",
+      "discord": "forien",
+      "email": "mr.forien@gmail.com",
+      "url": "https://www.patreon.com/foundryworkshop"
+    }
+  ],
+  "compatibility": {
+    "minimum": "12",
+    "verified": "12.331"
+  },
+  "packs": [],
+  "packFolders": [],
+  "esmodules": [
+    "champions-now.mjs"
+  ],
+  "styles": [
+    "styles/champions-now.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "languages/en.json"
+    }
+  ],
+  "primaryTokenAttribute": "combat.endurance",
+  "secondaryTokenAttribute": "combat.knockout",
+  "grid": {
+    "type": 3,
+    "distance": 1,
+    "units": "hex"
+  },
+  "flags": {
+    "hotReload": {
+      "extensions": [
+        "css",
+        "html",
+        "hbs",
+        "json"
+      ],
+      "paths": [
+        "templates/",
+        "styles/",
+        "languages/"
+      ]
+    }
+  }
+}

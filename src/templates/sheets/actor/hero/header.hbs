@@ -1,0 +1,36 @@
+<div>
+    <div class="header-left">
+        <div class="header-row">
+            <div class="header-group">
+                <div class="header-group">
+                    <input class="comic-input bangers hero-name" type="text" name="name" value="{{actor.name}}">
+                    {{#unless limited}}
+                        <input class="comic-input real-name" type="text" name="system.realName"
+                               value="{{system.realName}}" placeholder="{{localize "Champions.Hero.RealName"}}">
+                    {{/unless}}
+                </div>
+            </div>
+        </div>
+        {{#unless limited}}
+            <div class="header-row xp-input">
+                <div class="input-group">
+                    <label>{{localize "Champions.Hero.XP.Earned"}}:</label>
+                    <input type="text" name="system.xp.earned" value="{{system.xp.earned}}">
+                </div>
+                <div class="input-group">
+                    <label>{{localize "Champions.Hero.XP.Used"}}:</label>
+                    <input type="text" name="system.xp.used" value="{{system.xp.used}}">
+                </div>
+                <div class="input-group">
+                    <label>{{localize "Champions.Hero.XP.Left"}}:</label>
+                    <input type="text" value="{{system.xp.left}}" disabled>
+                </div>
+            </div>
+            <div class="header-row">
+                <a class="button" data-action="roll3d6">{{localize "Champions.Rolls.Simple3d6"}}</a>
+                <a class="button" data-action="rollEffect">{{localize "Champions.Rolls.Effect"}}</a>
+            </div>
+        {{/unless}}
+    </div>
+    <img {{#if editable}}data-action="editImage"{{/if}} src="{{actor.img}}">
+</div>

@@ -1,0 +1,513 @@
+@font-face {
+  font-family: "Bangers";
+  src: url("/systems/champions-now/fonts/Bangers/Bangers-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Comic Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/systems/champions-now/fonts/Comic_Neue/ComicNeue-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Comic Neue";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/systems/champions-now/fonts/Comic_Neue/ComicNeue-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Comic Neue";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/systems/champions-now/fonts/Comic_Neue/ComicNeue-BoldItalic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Comic Neue";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/systems/champions-now/fonts/Comic_Neue/ComicNeue-Italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Comic Neue";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/systems/champions-now/fonts/Comic_Neue/ComicNeue-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Comic Neue";
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/systems/champions-now/fonts/Comic_Neue/ComicNeue-LightItalic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Comic Helvetic";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/systems/champions-now/fonts/ComicHelvetic/ComicHelvetic_Medium.otf") format("opentype");
+}
+@font-face {
+  font-family: "Comic Helvetic";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/systems/champions-now/fonts/ComicHelvetic/ComicHelvetic_Light.otf") format("opentype");
+}
+@font-face {
+  font-family: "Comic Helvetic";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/systems/champions-now/fonts/ComicHelvetic/ComicHelvetic_Heavy.otf") format("opentype");
+}
+.champions-now.actor .sheet-header {
+  height: 130px;
+}
+
+.champions-now.sheet {
+  font-size: var(--font-size-12);
+}
+.champions-now.sheet .window-content .button {
+  height: 30px;
+  font-family: "Comic Neue", serif;
+}
+.champions-now.sheet .window-header.invert * {
+  filter: invert(1) grayscale(1) brightness(1.3) contrast(9000);
+  mix-blend-mode: luminosity;
+}
+.champions-now.sheet .sheet-header {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.champions-now.sheet .sheet-header .header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+.champions-now.sheet .sheet-header .header-left .header-row {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.champions-now.sheet .sheet-header .header-left .header-row .header-group {
+  flex: 1 1 fit-content;
+}
+.champions-now.sheet .sheet-header img {
+  flex: 0 10 max-content;
+  width: 130px;
+  height: 130px;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.champions-now.sheet .sheet-header img[data-action=editImage] {
+  cursor: pointer;
+}
+.champions-now.sheet .sheet-header .button {
+  flex: 0 5 fit-content;
+}
+.champions-now.sheet .sheet-tabs.tabs {
+  justify-content: space-around;
+  gap: 0;
+  padding: 5px 0;
+  margin: 5px 0;
+  border-top: 2px solid var(--color-border-light-tertiary);
+  border-bottom: 2px solid var(--color-border-light-tertiary);
+}
+.champions-now.sheet .sheet-tabs.tabs a {
+  font-size: var(--font-size-14);
+  font-weight: bold;
+  display: block;
+  border: 2px solid var(--borderColorPrimary);
+}
+.champions-now.sheet .sheet-tabs.tabs a.active {
+  background-color: var(--bgColorActive);
+  text-shadow: none;
+}
+.champions-now.sheet .sheet-tabs.tabs a:hover:not(.active) {
+  background-color: var(--bgColorHover);
+  text-shadow: none;
+  box-shadow: inset -4px 4px 10px 0px var(--buttonShadowHover), inset 4px -4px 10px 0px var(--buttonShadowHover);
+}
+.champions-now.sheet .sheet-tabs.tabs.hidden {
+  display: none;
+}
+.champions-now.sheet .tab {
+  display: flex;
+  flex: 1;
+}
+.champions-now.sheet .input-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  /** border **/
+  /** /border **/
+}
+.champions-now.sheet .input-rows.border {
+  padding: 5px 0;
+}
+.champions-now.sheet .input-rows.border .input-group {
+  border: 2px solid var(--borderColorPrimary);
+  padding: 8px;
+}
+.champions-now.sheet .input-row {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.champions-now.sheet .input-group {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.champions-now.sheet .input-group.vertical {
+  flex-direction: column;
+}
+.champions-now.sheet .input-group.vertical label {
+  flex: 0 100 min-content;
+  font-family: "Comic Helvetic", serif;
+}
+.champions-now.sheet .input-group.no-gap {
+  gap: 0;
+}
+.champions-now.sheet .input-group label {
+  font-weight: bold;
+  font-size: var(--font-size-14);
+  flex: 10 0 fit-content;
+  display: flex;
+  align-self: normal;
+  align-items: center;
+}
+.champions-now.sheet .input-group input {
+  flex: 0 1 fit-content;
+}
+.champions-now.sheet .input-group prose-mirror {
+  flex: 1;
+}
+.champions-now.sheet .input-group prose-mirror .editor-container {
+  flex: 1;
+}
+.champions-now.sheet .input-group prose-mirror .editor-content {
+  padding: 0 4px;
+}
+.champions-now.sheet .sheet-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  height: 100%;
+}
+.champions-now.sheet .sheet-list .list-name {
+  flex: 1;
+}
+.champions-now.sheet .sheet-list .list-name.end {
+  flex: 0 1 35px;
+  text-align: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  height: 100%;
+  display: flex;
+}
+.champions-now.sheet .sheet-list .list-controls {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  height: 100%;
+  flex: 0 1 20px;
+}
+.champions-now.sheet .sheet-list .list-header, .champions-now.sheet .sheet-list .list-content {
+  gap: 5px;
+}
+.champions-now.sheet .sheet-list .list-header {
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  border-bottom: var(--borderColorPrimary) solid 2px;
+  padding: 2px 6px;
+}
+.champions-now.sheet .sheet-list .list-header .list-name {
+  font-family: "Comic Helvetic", serif;
+  font-weight: bold;
+  font-size: var(--font-size-14);
+  text-transform: uppercase;
+}
+.champions-now.sheet .sheet-list .list-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.champions-now.sheet .sheet-list .list-content .list-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 2px 6px;
+}
+.champions-now.sheet .sheet-list .list-content .list-row .row-content {
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+  font-size: var(--font-size-14);
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+.champions-now.sheet .sheet-list .list-content .list-row .row-content .list-name {
+  font-weight: bold;
+}
+.champions-now.sheet .sheet-list .list-content .list-row .row-content.smaller {
+  font-size: var(--font-size-12);
+  font-weight: normal;
+}
+.champions-now.sheet .sheet-list .list-content .list-row .row-content p {
+  margin: 0.1rem 0;
+}
+.champions-now.sheet .editor .editor-content {
+  min-height: 100px;
+}
+.champions-now.sheet input {
+  line-height: 1rem;
+  height: 24px;
+  padding: 3px 8px;
+}
+.champions-now.sheet input.comic-input {
+  background: none;
+  border: none;
+}
+
+body.theme-light .champions-now.sheet .sheet-list .list-content .list-row:nth-of-type(even) {
+  background: rgba(17, 17, 17, 0.1);
+}
+
+body.theme-dark .champions-now.sheet .sheet-list .list-content .list-row:nth-of-type(even) {
+  background: rgba(48, 40, 49, 0.4);
+}
+
+.champions-now.sheet.actor {
+  min-width: 560px;
+}
+.champions-now.sheet.actor .xp-input input {
+  width: 40px;
+}
+.champions-now.sheet.actor .tab {
+  overflow: hidden;
+}
+.champions-now.sheet.actor .tab section {
+  overflow-y: auto;
+  flex: 1;
+}
+.champions-now.sheet.actor .tab .form-group label {
+  max-width: 120px;
+}
+.champions-now.sheet.actor .tab .form-group input {
+  max-width: 40px;
+}
+.champions-now.sheet.actor fieldset {
+  border-color: var(--borderColorPrimary);
+  padding: 5px 9px;
+}
+.champions-now.sheet.actor fieldset.vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.champions-now.sheet.actor fieldset.horizontal {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  justify-content: space-between;
+}
+.champions-now.sheet.actor fieldset.horizontal * {
+  flex: 0 1 fit-content;
+}
+.champions-now.sheet.actor .characteristics {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.champions-now.sheet.actor .characteristics .characteristic label {
+  font-size: var(--font-size-14);
+}
+.champions-now.sheet.actor .characteristics .characteristic .details {
+  flex: 5 0 max-content;
+  align-self: stretch;
+}
+.champions-now.sheet.actor .characteristics .characteristic .details[data-action] {
+  cursor: pointer;
+}
+.champions-now.sheet.actor .characteristics .characteristic:has(.details:hover) {
+  background-color: var(--rowBackground);
+}
+.champions-now.sheet.actor .combat .stats {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 0 1 fit-content;
+}
+.champions-now.sheet.actor .combat .stats .stat {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  flex: 5 0 max-content;
+  align-self: stretch;
+}
+.champions-now.sheet.actor .combat .stats .stat[data-action] {
+  cursor: pointer;
+}
+.champions-now.sheet.actor .combat .stats .stat:has(.details:hover) {
+  background-color: var(--rowBackground);
+}
+.champions-now.sheet.actor .combat .stats .stat * {
+  flex: 1;
+}
+.champions-now.sheet.actor .combat .stats .stat > label {
+  flex: 0 1 25%;
+  font-size: var(--font-size-14);
+  align-content: center;
+}
+.champions-now.sheet.actor .combat .stats .stat > input {
+  flex: 0 1 40px;
+}
+.champions-now.sheet.actor .combat .stats .stat .details > p {
+  margin: 0;
+}
+.champions-now.sheet.actor .combat .stats .horizontal .stat input {
+  width: 40px;
+}
+.champions-now.sheet.actor .combat .stats .horizontal .stat label {
+  text-align: right;
+}
+.champions-now.sheet.actor .combat .phases {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.champions-now.sheet.actor .combat .phases .phase {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+}
+.champions-now.sheet.actor .combat .phases .phase * {
+  padding: 0;
+  margin: 0;
+}
+.champions-now.sheet.actor .combat section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.champions-now.sheet input.hero-name {
+  font-size: var(--font-size-36);
+  height: 29px;
+  padding: 0 8px 0 0;
+}
+.champions-now.sheet input.comic-book {
+  font-size: var(--font-size-24);
+  height: auto;
+}
+.champions-now.sheet input.real-name {
+  font-weight: bold;
+  padding: 0 8px 0 0;
+}
+
+.champions-now.sheet.item {
+  height: auto;
+  min-width: 350px;
+}
+.champions-now.sheet.item .header-group.sheet-header {
+  margin-bottom: 10px;
+}
+.champions-now.sheet.item .header-group.sheet-header input {
+  padding: 0;
+  font-size: var(--font-size-24);
+  text-align: center;
+}
+
+.champions-now {
+  --rowBackgroundLight: rgba(48, 40, 49, 0.4);
+  --rowBackgroundDark: rgba(17, 17, 17, 0.1);
+  --rowBackground: none;
+  --borderColorPrimary: #302831;
+  --bgColorActive: var(--color-bg-btn-minor-active);
+  --bgColorHover: var(--color-bg-btn-minor-active);
+  --buttonShadowActive: #645466;
+  --buttonShadowHover: #645466;
+}
+
+body.theme-dark .champions-now {
+  --rowBackground: var(--rowBackgroundDark);
+  --bgColorActive: #322733;
+  --bgColorHover: #322733;
+}
+
+body.theme-light .champions-now {
+  --rowBackground: var(--rowBackgroundLight);
+  --buttonShadowActive: rgba(255, 218, 125, 0.5);
+  --buttonShadowHover: rgba(255, 218, 125, 0.5);
+}
+
+.champions-now {
+  font-family: "Comic Neue", serif;
+}
+.champions-now#context-menu {
+  z-index: 9999;
+  width: unset;
+}
+.champions-now .uppercase {
+  text-transform: uppercase;
+}
+.champions-now .bold {
+  font-weight: 700;
+}
+.champions-now .fill {
+  flex: 1;
+}
+.champions-now .bangers {
+  font-family: Bangers, sans-serif;
+}
+.champions-now .comic {
+  font-family: "Comic Neue", serif;
+}
+.champions-now .center {
+  text-align: center;
+  justify-content: center;
+  justify-self: center;
+  justify-items: center;
+}
+.champions-now .center::placeholder {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  justify-self: center;
+  justify-items: center;
+}
+.champions-now.dice-roll.effect-roll .dice-flavor {
+  font-weight: bold;
+}
+.champions-now.dice-roll.effect-roll .dice-result {
+  order: unset;
+}
+
+#chat-log.champions-now {
+  font-family: "Comic Neue", serif;
+}
+#chat-log.champions-now h1 {
+  font-family: Bangers, sans-serif;
+}
+#chat-log.champions-now h2, #chat-log.champions-now h3, #chat-log.champions-now .message-sender {
+  font-family: "Comic Helvetic", serif;
+}
+
+/*# sourceMappingURL=champions-now.css.map */

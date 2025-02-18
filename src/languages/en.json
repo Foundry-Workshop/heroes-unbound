@@ -1,0 +1,99 @@
+{
+  "TYPES": {
+    "Actor": {
+      "hero": "Hero"
+    },
+    "Item": {
+      "maneuver": "Maneuver",
+      "power": "Power",
+      "situation": "Situation",
+      "skill": "Skill"
+    }
+  },
+
+  "Champions": {
+    "Rolls": {
+      "Simple3d6": "3d6 Roll",
+      "Effect": "Effect Roll",
+
+      "Knockout": "Knockout",
+      "Core": "Core",
+      "Total": "Total"
+    },
+
+    "Dialogs": {
+      "EffectRoll": {
+        "Title": "Dice Number",
+        "Text": "Select number of Dice to roll"
+      }
+    },
+
+    "Models": {
+      "Actor": {
+        "Characteristics": {
+          "strength": "Strength",
+          "presence": "Presence",
+          "body": "Body",
+          "stunned": "Stunned",
+          "recovery": "Recovery",
+          "knockout": "Knockout",
+          "endurance": "Endurance",
+          "Defense": "Defense",
+          "ordinary": "Ordinary",
+          "resistant": "Resistant",
+          "total": "Total",
+          "speed": "Speed",
+          "dexterity": "Dexterity",
+          "intelligence": "Intelligence",
+          "ego": "Ego"
+        }
+      }
+    },
+
+    "Hero": {
+      "RealName": "Real Name",
+      "XP": {
+        "Earned": "XP Earned",
+        "Used": "XP Used",
+        "Left": "XP Left"
+      },
+      "Statements": "Statements",
+      "Notes": "Notes",
+      "Situation": "Situation",
+      "Skill": "Skill",
+      "Power": "Power",
+      "End": "End",
+      "KO": "KO",
+      "CombatValue": "OCV/DCV",
+      "Initiative": "Initiative",
+      "Phases": "Phases",
+      "Maneuver": "Maneuver",
+      "Off": "Off",
+      "Def": "Def",
+      "Placeholders": {
+        "ComicBook": "Enter your Comic Book Title",
+        "Statement": "Enter your statement"
+      }
+    },
+
+    "Item": {
+      "END": "END",
+      "Off": "Off",
+      "Def": "Def"
+    },
+
+
+    "Settings": {
+      "ColourHeaders": {
+        "Name": "Colour Hero Header",
+        "Hint": "If enabled, the header of Hero sheets will be coloured with the hue of User to whom the Hero is assigned. (user setting)"
+      },
+
+      "Debug": {
+        "Enable": "Debug",
+        "EnableHint": "Enable console debug outputs. (client setting)"
+      }
+    }
+
+  }
+}

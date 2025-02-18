@@ -1,0 +1,16 @@
+<div class="tab {{tab.cssClass}}" data-group="{{tab.group}}" data-tab="{{tab.id}}">
+    <div class="input-rows border">
+        <div class="input-group vertical">
+            <input class="bangers bangers comic-book" type="text" name="system.title" value="{{system.title}}" placeholder="{{localize "Champions.Hero.Placeholders.ComicBook"}}">
+        </div>
+        <div class="input-group vertical">
+            <label>{{localize "Champions.Hero.Statements"}}</label>
+            <input type="text" name="system.statements.first" value="{{system.statements.first}}" placeholder="{{localize "Champions.Hero.Placeholders.Statement"}}">
+            <input type="text" name="system.statements.second" value="{{system.statements.second}}" placeholder="{{localize "Champions.Hero.Placeholders.Statement"}}">
+        </div>
+        <div class="input-group vertical fill">
+            <label>{{localize "Champions.Hero.Notes"}}</label>
+            {{formInput fields.notes value=system.notes enriched=enrichment.system.notes toggled=true}}
+        </div>
+    </div>
+</div>

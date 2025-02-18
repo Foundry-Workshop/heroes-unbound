@@ -1,0 +1,84 @@
+on:
+  push:
+    # Sequence of patterns matched against refs/tags
+    tags:
+      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+      - '!v*-beta'
+
+name: Upload Release Asset
+
+jobs:
+  build:
+    name: Upload Release Asset
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Extract Version From Tag
+        id: get_version
+        uses: battila7/get-version-action@v2
+
+      - name: Modify Module Manifest With Release-Specific Values
+        id: sub_manifest_link_version
+        uses: microsoft/variable-substitution@v1
+        with:
+          files: './dist/system.json'
+        env:
+          version: ${{steps.get_version.outputs.version-without-v}}
+          url: https://github.com/${{github.repository}}
+          manifest: https://github.com/${{github.repository}}/releases/latest/download/module.json
+          download: https://github.com/${{github.repository}}/releases/download/${{steps.get_version.outputs.version}}/module.zip
+          readme: https://github.com/${{github.repository}}/blob/${{steps.get_version.outputs.version}}/README.md
+          changelog: https://github.com/${{github.repository}}/blob/${{steps.get_version.outputs.version}}/CHANGELOG.md
+          bugs: https://github.com/${{github.repository}}/issues
+
+      - name: Zip files
+        run: |
+          cp CHANGELOG.md README.md LICENSE dist/
+          cd dist/
+          zip -r system.zip *
+#          zip -r system.zip system.json CHANGELOG.md README.md LICENSE icons/ languages/ modules/ packs/ scripts/ styles/ templates/
+
+      - name: Update Release with Files
+        id: create_version_release
+        uses: ncipollo/release-action@v1
+        with:
+          allowUpdates: true
+          name: Release ${{steps.get_version.outputs.version}}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifacts: './dist/system.json, ./dist/system.zip'
+          tag: ${{ github.ref }}
+
+      - name: Get System ID
+        id: systemID
+        uses: notiz-dev/github-action-json-property@release
+        with:
+          path: './dist/system.json'
+          prop_path: 'id'
+
+      - name: Get mininum
+        id: minimum
+        uses: notiz-dev/github-action-json-property@release
+        with:
+          path: './dist/system.json'
+          prop_path: 'compatibility.minimum'
+
+      - name: Get verified
+        id: verified
+        uses: notiz-dev/github-action-json-property@release
+        with:
+          path: './dist/system.json'
+          prop_path: 'compatibility.verified'
+
+      - name: Foundry Release API
+        uses: fjogeleit/http-request-action@v1
+        with:
+          url: 'https://api.foundryvtt.com/_api/packages/release_version'
+          method: 'POST'
+          customHeaders: '{"Content-Type": "application/json", "Authorization" : "${{ secrets.FOUNDRY_KEY }}"}'
+          data: '{"dry_run": false, "id": "${{steps.systemID.outputs.prop}}", "release": {"version":  "${{steps.get_version.outputs.version-without-v}}", "manifest": "https://github.com/${{github.repository}}/releases/download/${{steps.get_version.outputs.version}}/module.json", "notes": "https://github.com/${{github.repository}}/blob/${{steps.get_version.outputs.version}}/CHANGELOG.md", "compatibility" : {"minimum": "${{steps.minimum.outputs.prop}}", "verified": "${{steps.verified.outputs.prop}}"}}}'
+          preventFailureOnNoResponse: true
+

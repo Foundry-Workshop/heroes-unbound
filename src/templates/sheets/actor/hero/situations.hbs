@@ -1,0 +1,33 @@
+<div class="tab {{tab.cssClass}}" data-group="{{tab.group}}" data-tab="{{tab.id}}">
+    <section class="sheet-list">
+        <div class="list-header">
+            <div class="list-name">{{localize "Champions.Hero.Situation"}}</div>
+            <div class="list-controls">
+                <a class="list-control" data-action="createItem" data-type="situation">
+                    <i class="fas fa-plus"></i>
+                </a>
+            </div>
+        </div>
+        <section class="list-content">
+            {{#each items.situation}}
+                <div class="list-row" data-uuid="{{this.uuid}}" {{#if this.canPostToChat}}data-chat="true"{{/if}}>
+                    <div class="row-content">
+                        <div class="list-name">
+                            <div class="row-content">
+                                <a class="label" data-action="editItem">{{this.name}}</a>
+                            </div>
+                            <div class="row-content smaller">
+                                <div>
+                                    {{{this.system.enriched.description}}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-controls">
+                            <a class="list-control context-menu"><i class="fa-regular fa-ellipsis-vertical"></i></a>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        </section>
+    </section>
+</div>

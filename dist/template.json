@@ -1,0 +1,19 @@
+{
+  "Actor": {
+    "types": [
+      "hero"
+    ]
+  },
+  "Item": {
+    "types": [
+      "situation",
+      "power",
+      "maneuver",
+      "skill"
+    ]
+  },
+  "ChatMessage" : {
+    "types" : [
+    ]
+  }
+}

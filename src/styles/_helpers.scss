@@ -1,0 +1,27 @@
+@mixin size ($size: 80px) {
+  width: $size;
+  height: $size;
+}
+
+@mixin flexContainer ($direction: row, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  gap: $gap;
+}
+
+@mixin headerFont {
+  font-family: Bangers, sans-serif;
+}
+
+@mixin comicFont {
+  font-family: "Comic Neue", serif;
+}
+
+@mixin strongFont {
+  font-family: "Comic Helvetic", serif;
+}
+
+@mixin insetShadow ($color, $size: 5px, $blur: 10px) {
+  box-shadow: inset (-$size) $size $blur 0px $color,
+              inset $size (-$size) $blur 0px $color;
+}

@@ -1,0 +1,101 @@
+<div class="tab {{tab.cssClass}} combat" data-group="{{tab.group}}" data-tab="{{tab.id}}">
+    <section>
+        <div class="stats">
+            <fieldset class="vertical">
+                <div class="stat">
+                    <label class="uppercase bold">{{localize "Champions.Hero.Phases"}}</label>
+                    <div class="phases">
+                        {{#each system.combat.Phases as |phase p|}}
+                            <div class="phase">
+                                <label for="phase{{@index}}">{{list_number @index}}</label>
+                                <input id="phase{{@index}}" type="checkbox" name="phases"
+                                       {{#if phase}}checked="checked"{{/if}} data-action="phaseToggle">
+                            </div>
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="stat">
+                    <label class="uppercase bold">{{localize "Champions.Hero.Initiative"}}</label>
+                    <div class="details" {{#if editable}}data-action="combatStat" data-stat="{{system.combat.initiative}}" data-key="initiative" data-label="{{localize "Champions.Hero.Initiative"}}"{{/if}}>
+                        {{{enrichment.system.combat.initiative}}}
+                    </div>
+                </div>
+                <div class="stat">
+                    <label class="uppercase bold">{{localize "Champions.Hero.CombatValue"}}</label>
+                    <div class="details" {{#if editable}}data-action="combatStat" data-stat="{{system.combat.combatValue}}" data-key="combatValue" data-label="{{localize "Champions.Hero.CombatValue"}}"{{/if}}>
+                        {{{enrichment.system.combat.combatValue}}}
+                    </div>
+                </div>
+                <div class="stat">
+                    <label class="uppercase bold">{{localize "Champions.Models.Actor.Characteristics.Defense"}}</label>
+                    <div class="details" {{#if editable}}data-action="combatStat" data-stat="{{system.combat.defense}}" data-key="defense" data-label="{{localize "Champions.Hero.Defense"}}"{{/if}}>
+                        {{{enrichment.system.combat.defense}}}
+                    </div>
+                </div>
+                <div class="stat">
+                    <label class="uppercase bold">{{localize "Champions.Models.Actor.Characteristics.stunned"}}</label>
+                    {{formInput fields.combat.fields.stunned value=system.combat.stunned}}
+                </div>
+                <div class="stat">
+                    <label class="uppercase bold">{{localize "Champions.Models.Actor.Characteristics.recovery"}}</label>
+                    {{formInput fields.combat.fields.recovery value=system.combat.recovery}}
+                </div>
+            </fieldset>
+            <fieldset class="horizontal">
+                <div class="stat">
+                    <label class="uppercase bold">{{localize "Champions.Models.Actor.Characteristics.body"}}</label>
+                    {{formInput fields.combat.fields.body.fields.value value=system.combat.body.value}}
+                    /
+                    {{formInput fields.combat.fields.body.fields.max value=system.combat.body.max}}
+                </div>
+                <div class="stat">
+                    <label class="uppercase bold">{{localize "Champions.Hero.KO"}}</label>
+                    {{formInput fields.combat.fields.knockout.fields.value value=system.combat.knockout.value}}
+                    /
+                    {{formInput fields.combat.fields.knockout.fields.max value=system.combat.knockout.max}}
+                </div>
+                <div class="stat">
+                    <label class="uppercase bold">{{localize "Champions.Hero.End"}}</label>
+                    {{formInput fields.combat.fields.endurance.fields.value value=system.combat.endurance.value}}
+                    /
+                    {{formInput fields.combat.fields.endurance.fields.max value=system.combat.endurance.max}}
+                </div>
+            </fieldset>
+        </div>
+        <div class="sheet-list">
+            <div class="list-header">
+                <div class="list-name">{{localize "Champions.Hero.Maneuver"}}</div>
+                <div class="list-name end">{{localize "Champions.Hero.Off"}}</div>
+                <div class="list-name end">{{localize "Champions.Hero.Def"}}</div>
+                <div class="list-controls">
+                    <a class="list-control" data-action="createItem" data-type="maneuver">
+                        <i class="fas fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+            <section class="list-content">
+                {{#each items.maneuver}}
+                    <div class="list-row" data-uuid="{{this.uuid}}" {{#if this.canPostToChat}}data-chat="true"{{/if}}>
+                        <div class="row-content">
+                            <div class="list-name">
+                                <div class="row-content">
+                                    <a class="label" data-action="editItem">{{this.name}}</a>
+                                </div>
+                                <div class="row-content smaller">
+                                    <div>
+                                        {{{this.system.enriched.description}}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-name end">{{this.system.off}}</div>
+                            <div class="list-name end">{{this.system.def}}</div>
+                            <div class="list-controls">
+                                <a class="list-control context-menu"><i class="fa-regular fa-ellipsis-vertical"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            </section>
+        </div>
+    </section>
+</div>

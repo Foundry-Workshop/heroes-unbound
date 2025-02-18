@@ -1,0 +1,34 @@
+<div class="dice-roll champions-now effect-roll">
+    <div class="dice-result">
+        <div class="dice-formula">{{formula}}</div>
+        <div class="dice-tooltip">
+            <section class="tooltip-part">
+                <div class="dice">
+                    <header class="part-header flexrow">
+                        <span class="part-formula">{{formula}}</span>
+                        <span class="part-total">{{stunTotal}}</span>
+                    </header>
+                    <ol class="dice-rolls">
+                        {{#each rolls}}
+                            <li class="roll {{classes}}">{{{result}}}</li>
+                        {{/each}}
+                    </ol>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div>
+        <div class="dice-flavor">{{localize "Champions.Rolls.Knockout"}}</div>
+        <div class="dice-result">
+            <h4 class="dice-total">{{stunTotal}}</h4>
+        </div>
+    </div>
+
+    <div>
+        <div class="dice-flavor">{{localize "Champions.Rolls.Core"}}</div>
+        <div class="dice-result">
+            <h4 class="dice-total">{{coreTotal}}</h4>
+        </div>
+    </div>
+</div>
