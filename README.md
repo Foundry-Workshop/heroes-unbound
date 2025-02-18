@@ -45,7 +45,7 @@ This system features:
   - Effect Roll can be performed either by a button on Hero Sheet, or by using `/effect X` command (where `X` is number of d6s) 
 
 ### Content
-This System contains no actual content. A game manual of either **Champions Now** or **Heroes Unbound**, as well as certain level of manual input is required to play the game.
+This System contains no actual content. A game manual of either **Champions Now** as well as certain level of manual input is required to play the game.
 
 ## Troubleshooting and Debug
 If you want to have deeper understanding of why system behaves the way it does, **you can enable Debug in system's setting**.
