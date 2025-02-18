@@ -38,6 +38,7 @@ jobs:
       - name: Zip files
         run: |
           cp CHANGELOG.md README.md LICENSE dist/
+          cp src/languages src/templates dist/
           cd dist/
           zip -r system.zip *
 #          zip -r system.zip system.json CHANGELOG.md README.md LICENSE icons/ languages/ modules/ packs/ scripts/ styles/ templates/
