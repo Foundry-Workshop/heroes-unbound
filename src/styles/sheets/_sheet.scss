@@ -1,6 +1,6 @@
 $header-height: 130px;
 
-.champions-now {
+.heroes-unbound {
   &.actor {
     .sheet-header {
       height: $header-height;
@@ -8,7 +8,7 @@ $header-height: 130px;
   }
 }
 
-.champions-now {
+.heroes-unbound {
   &.sheet {
     font-size: var(--font-size-12);
 
@@ -277,7 +277,7 @@ $header-height: 130px;
 }
 
 body.theme-light {
-  .champions-now {
+  .heroes-unbound {
     &.sheet {
       .sheet-list {
         .list-content {
@@ -293,7 +293,7 @@ body.theme-light {
 }
 
 body.theme-dark {
-  .champions-now {
+  .heroes-unbound {
     &.sheet {
       .sheet-list {
         .list-content {

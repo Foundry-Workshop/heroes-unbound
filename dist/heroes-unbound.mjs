@@ -1,5 +1,5 @@
 /**
- * License: https://github.com/Foundry-Workshop/champions-now/blob/master/LICENSE
+ * License: https://github.com/Foundry-Workshop/heroes-unbound/blob/master/LICENSE
  *
  * Author: Wojciech "Forien" Szulc <mr.forien@gmail.com>
  */
@@ -10,9 +10,9 @@ const LINKS = {
 };
 
 const constants = {
-  systemPath: 'systems/champions-now',
-  systemId: 'champions-now',
-  systemLabel: 'Champions Now',
+  systemPath: 'systems/heroes-unbound',
+  systemId: 'heroes-unbound',
+  systemLabel: 'Heroes Unbound',
   loopLimit: 100
 };
 
@@ -285,7 +285,7 @@ class FixedContextMenu extends ContextMenu {
     html.css("visibility", "hidden");
     html.css("top", event.clientY);
     html.css("left", event.clientX);
-    html.addClass("champions-now");
+    html.addClass("heroes-unbound");
 
     $(document.body).append(html);
     // Display the menu
@@ -319,7 +319,7 @@ function BaseSheetMixin(BaseApplication) {
     }
 
     static DEFAULT_OPTIONS = {
-      classes: ["champions-now"],
+      classes: ["heroes-unbound"],
       actions: {
         editImage: this._onEditImage,
       },
@@ -962,7 +962,7 @@ class EffectRoll extends Roll {
   async toMessage(messageData={}, {rollMode, create=true}={}) {
     messageData = await super.toMessage(messageData, {rollMode, create: false});
 
-    const content = await renderTemplate("systems/champions-now/templates/sheets/rolls/effect-roll.hbs", this);
+    const content = await renderTemplate("systems/heroes-unbound/templates/sheets/rolls/effect-roll.hbs", this);
 
     messageData = foundry.utils.mergeObject(messageData, {
       flavor: game.i18n.localize("Champions.Rolls.Effect"),
@@ -1897,7 +1897,7 @@ class HeroDataModel extends BaseActorDataModel {
   }
 }
 
-function BaseChampionsDocument(BaseApplication) {
+function BaseHeroesDocument(BaseApplication) {
   /**
    * @extends Document
    */
@@ -1924,7 +1924,7 @@ function BaseChampionsDocument(BaseApplication) {
   return BaseChampionsDocument;
 }
 
-class ChampionsActor extends BaseChampionsDocument(Actor) {
+class HeroesActor extends BaseHeroesDocument(Actor) {
   getRollData() {
     return this._parseModelForRollData(this.system);
   }
@@ -1946,7 +1946,7 @@ class ChampionsActor extends BaseChampionsDocument(Actor) {
   }
 }
 
-class ChampionsItem extends BaseChampionsDocument(Item) {
+class HeroesItem extends BaseHeroesDocument(Item) {
   
 }
 
@@ -2047,7 +2047,7 @@ async function initializeFonts() {
       fonts: [
         {
           urls: [
-            "systems/champions-now/fonts/Bangers/Bangers-Regular.ttf"
+            "systems/heroes-unbound/fonts/Bangers/Bangers-Regular.ttf"
           ],
           weight: 400,
           style: "normal"
@@ -2059,42 +2059,42 @@ async function initializeFonts() {
       fonts: [
         {
           urls: [
-            "systems/champions-now/fonts/Comic_Neue/ComicNeue-Regular.ttf"
+            "systems/heroes-unbound/fonts/Comic_Neue/ComicNeue-Regular.ttf"
           ],
           weight: 400,
           style: "normal"
         },
         {
           urls: [
-            "systems/champions-now/fonts/Comic_Neue/ComicNeue-Bold.ttf"
+            "systems/heroes-unbound/fonts/Comic_Neue/ComicNeue-Bold.ttf"
           ],
           weight: 700,
           style: "normal"
         },
         {
           urls: [
-            "systems/champions-now/fonts/Comic_Neue/ComicNeue-BoldItalic.ttf"
+            "systems/heroes-unbound/fonts/Comic_Neue/ComicNeue-BoldItalic.ttf"
           ],
           weight: 700,
           style: "italic"
         },
         {
           urls: [
-            "systems/champions-now/fonts/Comic_Neue/ComicNeue-Italic.ttf"
+            "systems/heroes-unbound/fonts/Comic_Neue/ComicNeue-Italic.ttf"
           ],
           weight: 400,
           style: "italic"
         },
         {
           urls: [
-            "systems/champions-now/fonts/Comic_Neue/ComicNeue-Light.ttf"
+            "systems/heroes-unbound/fonts/Comic_Neue/ComicNeue-Light.ttf"
           ],
           weight: 300,
           style: "normal"
         },
         {
           urls: [
-            "systems/champions-now/fonts/Comic_Neue/ComicNeue-LightItalic.ttf"
+            "systems/heroes-unbound/fonts/Comic_Neue/ComicNeue-LightItalic.ttf"
           ],
           weight: 300,
           style: "italic"
@@ -2106,21 +2106,21 @@ async function initializeFonts() {
       fonts: [
         {
           urls: [
-            "systems/champions-now/fonts/ComicHelvetic/ComicHelvetic_Medium.otf"
+            "systems/heroes-unbound/fonts/ComicHelvetic/ComicHelvetic_Medium.otf"
           ],
           weight: 400,
           style: "normal"
         },
         {
           urls: [
-            "systems/champions-now/fonts/ComicHelvetic/ComicHelvetic_Light.otf"
+            "systems/heroes-unbound/fonts/ComicHelvetic/ComicHelvetic_Light.otf"
           ],
           weight: 300,
           style: "normal"
         },
         {
           urls: [
-            "systems/champions-now/fonts/ComicHelvetic/ComicHelvetic_Heavy.otf"
+            "systems/heroes-unbound/fonts/ComicHelvetic/ComicHelvetic_Heavy.otf"
           ],
           weight: 700,
           style: "normal"
@@ -2133,21 +2133,21 @@ async function initializeFonts() {
 }
 
 function setDocumentClasses() {
-  CONFIG.Actor.documentClass = ChampionsActor;
-  CONFIG.Item.documentClass = ChampionsItem;
+  CONFIG.Actor.documentClass = HeroesActor;
+  CONFIG.Item.documentClass = HeroesItem;
 
   CONFIG.Dice.rolls.push(EffectRoll);
 }
 
 function registerSheets() {
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("champions-now", HeroSheet, {types: ["hero"], makeDefault: true});
+  Actors.registerSheet("heroes-unbound", HeroSheet, {types: ["hero"], makeDefault: true});
 
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("champions-now", SituationSheet, {types: ["situation"], makeDefault: true});
-  Items.registerSheet("champions-now", SkillSheet, {types: ["skill"], makeDefault: true});
-  Items.registerSheet("champions-now", PowerSheet, {types: ["power"], makeDefault: true});
-  Items.registerSheet("champions-now", ManeuverSheet, {types: ["maneuver"], makeDefault: true});
+  Items.registerSheet("heroes-unbound", SituationSheet, {types: ["situation"], makeDefault: true});
+  Items.registerSheet("heroes-unbound", SkillSheet, {types: ["skill"], makeDefault: true});
+  Items.registerSheet("heroes-unbound", PowerSheet, {types: ["power"], makeDefault: true});
+  Items.registerSheet("heroes-unbound", ManeuverSheet, {types: ["maneuver"], makeDefault: true});
 
 }
 
@@ -2248,7 +2248,7 @@ Hooks.once("ready", () => {
 });
 
 Hooks.once("renderChatLog", (app, html, _options) => {
-  html.addClass("champions-now");
+  html.addClass("heroes-unbound");
 });
 
 Hooks.on("chatMessage", (html, content, msg) => {

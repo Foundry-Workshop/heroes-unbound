@@ -118,7 +118,7 @@ export default class EffectRoll extends Roll {
   async toMessage(messageData={}, {rollMode, create=true}={}) {
     messageData = await super.toMessage(messageData, {rollMode, create: false});
 
-    const content = await renderTemplate("systems/champions-now/templates/sheets/rolls/effect-roll.hbs", this);
+    const content = await renderTemplate("systems/heroes-unbound/templates/sheets/rolls/effect-roll.hbs", this);
 
     messageData = foundry.utils.mergeObject(messageData, {
       flavor: game.i18n.localize("Champions.Rolls.Effect"),

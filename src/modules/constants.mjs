@@ -1,7 +1,7 @@
 const constants = {
-  systemPath: 'systems/champions-now',
-  systemId: 'champions-now',
-  systemLabel: 'Champions Now',
+  systemPath: 'systems/heroes-unbound',
+  systemId: 'heroes-unbound',
+  systemLabel: 'Heroes Unbound',
   loopLimit: 100
 };
 

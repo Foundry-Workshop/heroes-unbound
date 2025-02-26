@@ -1,5 +1,5 @@
 /**
- * License: https://github.com/Foundry-Workshop/champions-now/blob/master/LICENSE
+ * License: https://github.com/Foundry-Workshop/heroes-unbound/blob/master/LICENSE
  *
  * Author: Wojciech "Forien" Szulc <mr.forien@gmail.com>
  */

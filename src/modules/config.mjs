@@ -3,8 +3,8 @@ import {SkillDataModel} from "./models/item/SkillDataModel.mjs";
 import {PowerDataModel} from "./models/item/PowerDataModel.mjs";
 import {ManeuverDataModel} from "./models/item/ManeuverDataModel.mjs";
 import {HeroDataModel} from "./models/actor/HeroDataModel.mjs";
-import ChampionsActor from "./documents/ChampionsActor.mjs";
-import ChampionsItem from "./documents/ChampionsItem.mjs";
+import HeroesActor from "./documents/HeroesActor.mjs";
+import HeroesItem from "./documents/HeroesItem.mjs";
 import EffectRoll from "./features/EffectRoll.mjs";
 import HeroSheet from "./apps/sheets/actor/HeroSheet.mjs";
 import SituationSheet from "./apps/sheets/item/SituationSheet.mjs";
@@ -17,21 +17,21 @@ import {initializeFonts} from "./features/Initialization.mjs";
 import {debug} from "./utility/Debug.mjs";
 
 export function setDocumentClasses() {
-  CONFIG.Actor.documentClass = ChampionsActor;
-  CONFIG.Item.documentClass = ChampionsItem;
+  CONFIG.Actor.documentClass = HeroesActor;
+  CONFIG.Item.documentClass = HeroesItem;
 
   CONFIG.Dice.rolls.push(EffectRoll);
 }
 
 export  function registerSheets() {
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("champions-now", HeroSheet, {types: ["hero"], makeDefault: true});
+  Actors.registerSheet("heroes-unbound", HeroSheet, {types: ["hero"], makeDefault: true});
 
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("champions-now", SituationSheet, {types: ["situation"], makeDefault: true});
-  Items.registerSheet("champions-now", SkillSheet, {types: ["skill"], makeDefault: true});
-  Items.registerSheet("champions-now", PowerSheet, {types: ["power"], makeDefault: true});
-  Items.registerSheet("champions-now", ManeuverSheet, {types: ["maneuver"], makeDefault: true});
+  Items.registerSheet("heroes-unbound", SituationSheet, {types: ["situation"], makeDefault: true});
+  Items.registerSheet("heroes-unbound", SkillSheet, {types: ["skill"], makeDefault: true});
+  Items.registerSheet("heroes-unbound", PowerSheet, {types: ["power"], makeDefault: true});
+  Items.registerSheet("heroes-unbound", ManeuverSheet, {types: ["maneuver"], makeDefault: true});
 
 }
 

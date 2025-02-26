@@ -1,4 +1,4 @@
-export default function BaseChampionsDocument(BaseApplication) {
+export default function BaseHeroesDocument(BaseApplication) {
   /**
    * @extends Document
    */

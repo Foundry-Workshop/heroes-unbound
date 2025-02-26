@@ -5,7 +5,7 @@
 @import "sheets/hero-sheet";
 @import "sheets/item-sheet";
 
-.champions-now {
+.heroes-unbound {
   --rowBackgroundLight: #{transparentize(#302831, 0.6)};
   --rowBackgroundDark: #{transparentize(#111, 0.9)};
   --rowBackground: none;
@@ -18,7 +18,7 @@
 }
 
 body.theme-dark {
-  .champions-now {
+  .heroes-unbound {
     --rowBackground: var(--rowBackgroundDark);
     --bgColorActive: #322733;
     --bgColorHover: #322733;
@@ -26,14 +26,14 @@ body.theme-dark {
 }
 
 body.theme-light {
-  .champions-now {
+  .heroes-unbound {
     --rowBackground: var(--rowBackgroundLight);
     --buttonShadowActive: #{transparentize(#ffda7d, 0.5)};
     --buttonShadowHover: #{transparentize(#ffda7d, 0.5)};
   }
 }
 
-.champions-now {
+.heroes-unbound {
   @include comicFont;
 
   &#context-menu {
@@ -89,7 +89,7 @@ body.theme-light {
   }
 }
 
-.champions-now {
+.heroes-unbound {
   #chat-log {
     @include comicFont;
 

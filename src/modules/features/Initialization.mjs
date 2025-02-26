@@ -8,7 +8,7 @@ export async function initializeFonts() {
       fonts: [
         {
           urls: [
-            "systems/champions-now/fonts/Bangers/Bangers-Regular.ttf"
+            "systems/heroes-unbound/fonts/Bangers/Bangers-Regular.ttf"
           ],
           weight: 400,
           style: "normal"
@@ -20,42 +20,42 @@ export async function initializeFonts() {
       fonts: [
         {
           urls: [
-            "systems/champions-now/fonts/Comic_Neue/ComicNeue-Regular.ttf"
+            "systems/heroes-unbound/fonts/Comic_Neue/ComicNeue-Regular.ttf"
           ],
           weight: 400,
           style: "normal"
         },
         {
           urls: [
-            "systems/champions-now/fonts/Comic_Neue/ComicNeue-Bold.ttf"
+            "systems/heroes-unbound/fonts/Comic_Neue/ComicNeue-Bold.ttf"
           ],
           weight: 700,
           style: "normal"
         },
         {
           urls: [
-            "systems/champions-now/fonts/Comic_Neue/ComicNeue-BoldItalic.ttf"
+            "systems/heroes-unbound/fonts/Comic_Neue/ComicNeue-BoldItalic.ttf"
           ],
           weight: 700,
           style: "italic"
         },
         {
           urls: [
-            "systems/champions-now/fonts/Comic_Neue/ComicNeue-Italic.ttf"
+            "systems/heroes-unbound/fonts/Comic_Neue/ComicNeue-Italic.ttf"
           ],
           weight: 400,
           style: "italic"
         },
         {
           urls: [
-            "systems/champions-now/fonts/Comic_Neue/ComicNeue-Light.ttf"
+            "systems/heroes-unbound/fonts/Comic_Neue/ComicNeue-Light.ttf"
           ],
           weight: 300,
           style: "normal"
         },
         {
           urls: [
-            "systems/champions-now/fonts/Comic_Neue/ComicNeue-LightItalic.ttf"
+            "systems/heroes-unbound/fonts/Comic_Neue/ComicNeue-LightItalic.ttf"
           ],
           weight: 300,
           style: "italic"
@@ -67,21 +67,21 @@ export async function initializeFonts() {
       fonts: [
         {
           urls: [
-            "systems/champions-now/fonts/ComicHelvetic/ComicHelvetic_Medium.otf"
+            "systems/heroes-unbound/fonts/ComicHelvetic/ComicHelvetic_Medium.otf"
           ],
           weight: 400,
           style: "normal"
         },
         {
           urls: [
-            "systems/champions-now/fonts/ComicHelvetic/ComicHelvetic_Light.otf"
+            "systems/heroes-unbound/fonts/ComicHelvetic/ComicHelvetic_Light.otf"
           ],
           weight: 300,
           style: "normal"
         },
         {
           urls: [
-            "systems/champions-now/fonts/ComicHelvetic/ComicHelvetic_Heavy.otf"
+            "systems/heroes-unbound/fonts/ComicHelvetic/ComicHelvetic_Heavy.otf"
           ],
           weight: 700,
           style: "normal"

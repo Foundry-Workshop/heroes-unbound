@@ -45,7 +45,7 @@ Hooks.once("ready", () => {
 });
 
 Hooks.once("renderChatLog", (app, html, _options) => {
-  html.addClass("champions-now");
+  html.addClass("heroes-unbound");
 });
 
 Hooks.on("chatMessage", (html, content, msg) => {

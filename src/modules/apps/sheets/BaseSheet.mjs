@@ -18,7 +18,7 @@ export default function BaseSheetMixin(BaseApplication) {
     }
 
     static DEFAULT_OPTIONS = {
-      classes: ["champions-now"],
+      classes: ["heroes-unbound"],
       actions: {
         editImage: this._onEditImage,
       },

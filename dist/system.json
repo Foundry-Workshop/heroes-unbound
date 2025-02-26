@@ -1,6 +1,6 @@
 {
-  "id": "champions-now",
-  "title": "Champions Now",
+  "id": "heroes-unbound",
+  "title": "Heroes Unbound",
   "version": "<<autoreplaced>>",
   "url": "<<autoreplaced>>",
   "manifest": "<<autoreplaced>>",
@@ -8,7 +8,7 @@
   "readme": "<<autoreplaced>>",
   "changelog": "<<autoreplaced>>",
   "bugs": "<<autoreplaced>>",
-  "description": "Unofficial system for the Champions Now / Heroes Unbound TTRPG.",
+  "description": "Unofficial system for the Heroes Unbound TTRPG.",
   "authors": [
     {
       "name": "Forien",
@@ -24,10 +24,10 @@
   "packs": [],
   "packFolders": [],
   "esmodules": [
-    "champions-now.mjs"
+    "heroes-unbound.mjs"
   ],
   "styles": [
-    "styles/champions-now.css"
+    "styles/heroes-unbound.css"
   ],
   "languages": [
     {

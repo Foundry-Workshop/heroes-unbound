@@ -1,14 +1,14 @@
-# FoundryVTT - Champions Now
-![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/Foundry-Workshop/champions-now?style=for-the-badge)
-![Foundry Core Compatible Version](https://img.shields.io/badge/dynamic/json.svg?url=https%3A%2F%2Fraw.githubusercontent.com%2FFFoundry-Workshop%2Fchampions-now%2Fmaster%2Fdist%2Fsystem.json&label=Foundry%20Min%20Version&query=$.compatibility.minimum&colorB=orange&style=for-the-badge)
-![Foundry Core Compatible Version](https://img.shields.io/badge/dynamic/json.svg?url=https%3A%2F%2Fraw.githubusercontent.com%2FFFoundry-Workshop%2Fchampions-now%2Fmaster%2Fdist%2Fsystem.json&label=Foundry%20Verified&query=$.compatibility.verified&colorB=orange&style=for-the-badge)  
-![License](https://img.shields.io/github/license/Foundry-Workshop/champions-now?style=for-the-badge) ![GitHub Releases](https://img.shields.io/github/downloads/Foundry-Workshop/champions-now/latest/module.zip?style=for-the-badge)
-![GitHub All Releases](https://img.shields.io/github/downloads/Foundry-Workshop/champions-now/module.zip?style=for-the-badge&label=Downloads+total)  
+# FoundryVTT - Heroes Unbound
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/Foundry-Workshop/heroes-unbound?style=for-the-badge)
+![Foundry Core Compatible Version](https://img.shields.io/badge/dynamic/json.svg?url=https%3A%2F%2Fraw.githubusercontent.com%2FFFoundry-Workshop%2Fheroes-unbound%2Fmaster%2Fdist%2Fsystem.json&label=Foundry%20Min%20Version&query=$.compatibility.minimum&colorB=orange&style=for-the-badge)
+![Foundry Core Compatible Version](https://img.shields.io/badge/dynamic/json.svg?url=https%3A%2F%2Fraw.githubusercontent.com%2FFFoundry-Workshop%2Fheroes-unbound%2Fmaster%2Fdist%2Fsystem.json&label=Foundry%20Verified&query=$.compatibility.verified&colorB=orange&style=for-the-badge)  
+![License](https://img.shields.io/github/license/Foundry-Workshop/heroes-unbound?style=for-the-badge) ![GitHub Releases](https://img.shields.io/github/downloads/Foundry-Workshop/heroes-unbound/latest/module.zip?style=for-the-badge)
+![GitHub All Releases](https://img.shields.io/github/downloads/Foundry-Workshop/heroes-unbound/module.zip?style=for-the-badge&label=Downloads+total)  
 [![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white&link=https%3A%2F%2Fdiscord.gg%2FXkTFv8DRDc)](https://discord.gg/XkTFv8DRDc)
 [![Patreon](https://img.shields.io/badge/Patreon-F96854?style=for-the-badge&logo=patreon&logoColor=white)](https://www.patreon.com/foundryworkshop)
 [![Ko-Fi](https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/forien)
 
-This system is an unofficial implementation of **Champions Now** system by Hero Games for Foundry Virtual Table Top.  
+This system is an unofficial implementation of **Heroes Unbound** system by Hero Games for Foundry Virtual Table Top.  
 
 *Note that this system does not contain content from copyrighted Hero Games products, only rollable character sheets.*
 
@@ -17,22 +17,22 @@ This system is an unofficial implementation of **Champions Now** system by Hero 
 
 ### Recommended: Install via FoundryVTT Setup Screen
 
-Use the System Browser on the Setup Screen to find the **Champions Now** System and click "install".  
+Use the System Browser on the Setup Screen to find the **Heroes Unbound** System and click "install".  
 FoundryVTT will automatically install the System.
 
-Once installed, create a World using **Champions Now** game system.
+Once installed, create a World using **Heroes Unbound** game system.
 
 ### Manifest URL
 
-1. Copy this [URL](https://github.com/Foundry-Workshop/champions-now/releases/latest/download/system.json).
-2. Install Champions Now system by providing the copied URL in the Manifest Input within the Foundry Setup Screen.
-3. Once installed, create a World using **Champions Now** game system.
+1. Copy this [URL](https://github.com/Foundry-Workshop/heroes-unbound/releases/latest/download/system.json).
+2. Install Heroes Unbound system by providing the copied URL in the Manifest Input within the Foundry Setup Screen.
+3. Once installed, create a World using **Heroes Unbound** game system.
 
 ### Manual (ZIP) — not recommended
 
-1. Download ZIP of a [latest release](https://github.com/Foundry-Workshop/champions-now/releases/latest/download/system.zip).
-2. Install Champions Now system by extracting ZIP in your `FoundryData/Data/systems` directory
-3. Once installed, create a World using **Champions Now** game system.
+1. Download ZIP of a [latest release](https://github.com/Foundry-Workshop/heroes-unbound/releases/latest/download/system.zip).
+2. Install Heroes Unbound system by extracting ZIP in your `FoundryData/Data/systems` directory
+3. Once installed, create a World using **Heroes Unbound** game system.
 
 
 
@@ -45,7 +45,7 @@ This system features:
   - Effect Roll can be performed either by a button on Hero Sheet, or by using `/effect X` command (where `X` is number of d6s) 
 
 ### Content
-This System contains no actual content. A game manual of either **Champions Now** as well as certain level of manual input is required to play the game.
+This System contains no actual content. A game manual of either **Heroes Unbound** as well as certain level of manual input is required to play the game.
 
 ## Troubleshooting and Debug
 If you want to have deeper understanding of why system behaves the way it does, **you can enable Debug in system's setting**.
@@ -54,7 +54,7 @@ This setting makes it so that the system will output a ton of information into t
 
 You can open the console by using `F12` keybind on most browsers.
 
-**Tip**: Use `Champions Now` as filter in console to only see this system's messages.
+**Tip**: Use `Heroes Unbound` as filter in console to only see this system's messages.
 
 
 ## Recommended 3rd Party Modules
@@ -87,7 +87,7 @@ If you wish to support me, please consider [becoming my Patreon](https://www.pat
 
 ## License
 
-Champions Now is a system for Foundry VTT by Forien and is licensed under a [Mozilla Public License v. 2.0](https://github.com/Foundry-Workshop/champions-now/blob/master/LICENSE).
+Heroes Unbound is a system for Foundry VTT by Forien and is licensed under a [Mozilla Public License v. 2.0](https://github.com/Foundry-Workshop/heroes-unbound/blob/master/LICENSE).
 
 This work is licensed under Foundry Virtual Tabletop [EULA - Limited License for Package Development from March 2, 2023](https://foundryvtt.com/article/license/).
 

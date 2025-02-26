@@ -1,6 +1,6 @@
-import BaseChampionsDocument from "./BaseChampionsDocument.mjs";
+import BaseHeroesDocument from "./BaseHeroesDocument.mjs";
 
-export default class ChampionsActor extends BaseChampionsDocument(Actor) {
+export default class HeroesActor extends BaseHeroesDocument(Actor) {
   getRollData() {
     return this._parseModelForRollData(this.system);
   }

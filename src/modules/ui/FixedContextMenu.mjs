@@ -18,7 +18,7 @@ export default class FixedContextMenu extends ContextMenu {
     html.css("visibility", "hidden");
     html.css("top", event.clientY);
     html.css("left", event.clientX);
-    html.addClass("champions-now");
+    html.addClass("heroes-unbound");
 
     $(document.body).append(html);
     // Display the menu
