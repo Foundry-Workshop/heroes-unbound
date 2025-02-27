@@ -5,10 +5,32 @@ export class CombatModel extends foundry.abstract.DataModel {
     return {
       phases: new fields.NumberField({initial: 4}),
 
-      initiative: new fields.StringField({nullable: true}),
-      combatValue: new fields.StringField({nullable: true}),
+      initiative: new fields.SchemaField({
+        physical: new fields.NumberField({nullable: true, min: 0}),
+        mental: new fields.NumberField({nullable: true, min: 0}),
+      }),
 
-      defense: new fields.StringField({nullable: true}),
+      combatValue: new fields.SchemaField({
+        physical: new fields.NumberField({nullable: true, min: 0}),
+        mental: new fields.NumberField({nullable: true, min: 0}),
+      }),
+
+      levels: new fields.StringField({nullable: false, blank: false, initial: "<p></p>"}),
+
+      defense: new fields.SchemaField({
+        ordinary: new fields.SchemaField({
+          value: new fields.NumberField({nullable: true, min: 0}),
+          notes: new fields.StringField({nullable: false, blank: false, initial: "<p></p>"}),
+        }),
+        resistant: new fields.SchemaField({
+          value: new fields.NumberField({nullable: true, min: 0}),
+          notes: new fields.StringField({nullable: false, blank: false, initial: "<p></p>"}),
+        }),
+        total: new fields.SchemaField({
+          value: new fields.NumberField({nullable: true, min: 0}),
+          notes: new fields.StringField({nullable: false, blank: false, initial: "<p></p>"}),
+        }),
+      }),
 
       stunned: new fields.NumberField({nullable: true, min: 0}),
       recovery: new fields.NumberField({nullable: true, min: 0}),
@@ -28,6 +50,10 @@ export class CombatModel extends foundry.abstract.DataModel {
         max: new fields.NumberField({nullable: true, min: 0}),
       }),
     };
+  }
+
+  get value() {
+    return this.combatValue;
   }
 
   async savePhases(value) {

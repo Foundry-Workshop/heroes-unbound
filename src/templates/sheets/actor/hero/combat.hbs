@@ -16,49 +16,116 @@
                 </div>
                 <div class="stat">
                     <label class="uppercase bold">{{localize "Champions.Hero.Initiative"}}</label>
-                    <div class="details" {{#if editable}}data-action="combatStat" data-stat="{{system.combat.initiative}}" data-key="initiative" data-label="{{localize "Champions.Hero.Initiative"}}"{{/if}}>
-                        {{{enrichment.system.combat.initiative}}}
+                    <div class="stat-inputs row">
+                        <div class="input-group">
+                            <label>{{localize "Champions.Stat.Physical"}}</label>
+                            {{formInput fields.combat.fields.initiative.fields.physical
+                                        value=system.combat.initiative.physical}}
+                        </div>
+                        <div class="input-group">
+                            <label>{{localize "Champions.Stat.Mental"}}</label>
+                            {{formInput fields.combat.fields.initiative.fields.mental
+                                        value=system.combat.initiative.mental}}
+                        </div>
                     </div>
                 </div>
                 <div class="stat">
                     <label class="uppercase bold">{{localize "Champions.Hero.CombatValue"}}</label>
-                    <div class="details" {{#if editable}}data-action="combatStat" data-stat="{{system.combat.combatValue}}" data-key="combatValue" data-label="{{localize "Champions.Hero.CombatValue"}}"{{/if}}>
-                        {{{enrichment.system.combat.combatValue}}}
+                    <div class="stat-inputs row">
+                        <div class="input-group">
+                            <label>{{localize "Champions.Stat.Physical"}}</label>
+                            {{formInput fields.combat.fields.combatValue.fields.physical
+                                        value=system.combat.combatValue.physical}}
+                        </div>
+                        <div class="input-group">
+                            <label>{{localize "Champions.Stat.Mental"}}</label>
+                            {{formInput fields.combat.fields.combatValue.fields.mental
+                                        value=system.combat.combatValue.mental}}
+                        </div>
                     </div>
                 </div>
                 <div class="stat">
-                    <label class="uppercase bold">{{localize "Champions.Models.Actor.Characteristics.Defense"}}</label>
-                    <div class="details" {{#if editable}}data-action="combatStat" data-stat="{{system.combat.defense}}" data-key="defense" data-label="{{localize "Champions.Hero.Defense"}}"{{/if}}>
-                        {{{enrichment.system.combat.defense}}}
+                    <label></label>
+                    <div class="stat-inputs row">
+                        <div class="input-group">
+                            <label class="bold">{{localize "Champions.Hero.Levels"}}</label>
+                            <div class="details" {{#if editable}}data-action="combatStat"
+                                 data-stat="{{system.combat.levels}}" data-key="levels"
+                                 data-label="{{localize "Champions.Hero.Levels"}}"{{/if}}>
+                                {{{enrichment.system.combat.levels}}}
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="stat">
-                    <label class="uppercase bold">{{localize "Champions.Models.Actor.Characteristics.stunned"}}</label>
-                    {{formInput fields.combat.fields.stunned value=system.combat.stunned}}
-                </div>
-                <div class="stat">
-                    <label class="uppercase bold">{{localize "Champions.Models.Actor.Characteristics.recovery"}}</label>
-                    {{formInput fields.combat.fields.recovery value=system.combat.recovery}}
+                    <label class="uppercase bold self-start">{{localize "Champions.Models.Actor.Characteristics.Defense"}}</label>
+                    <div class="stat-inputs">
+                        <div class="input-group">
+                            <label>{{localize "Champions.Models.Actor.Characteristics.ordinary"}}</label>
+                            {{formInput fields.combat.fields.defense.fields.ordinary.fields.value
+                                        value=system.combat.defense.ordinary.value}}
+                            <div class="details" {{#if editable}}data-action="combatStat"
+                                 data-stat="{{system.combat.defense.ordinary.notes}}" data-key="defense.ordinary.notes"
+                                 data-label="{{localize "Champions.Models.Actor.Characteristics.ordinary"}}"{{/if}}>
+                                {{{enrichment.system.combat.defense.ordinary}}}
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>{{localize "Champions.Models.Actor.Characteristics.resistant"}}</label>
+                            {{formInput fields.combat.fields.defense.fields.resistant.fields.value
+                                        value=system.combat.defense.resistant.value}}
+                            <div class="details" {{#if editable}}data-action="combatStat"
+                                 data-stat="{{system.combat.defense.resistant.notes}}"
+                                 data-key="defense.resistant.notes"
+                                 data-label="{{localize "Champions.Models.Actor.Characteristics.resistant"}}"{{/if}}>
+                                {{{enrichment.system.combat.defense.resistant}}}
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>{{localize "Champions.Models.Actor.Characteristics.total"}}</label>
+                            {{formInput fields.combat.fields.defense.fields.total.fields.value
+                                        value=system.combat.defense.total.value}}
+                            <div class="details" {{#if editable}}data-action="combatStat"
+                                 data-stat="{{system.combat.defense.total.notes}}" data-key="defense.total.notes"
+                                 data-label="{{localize "Champions.Models.Actor.Characteristics.total"}}"{{/if}}>
+                                {{{enrichment.system.combat.defense.total}}}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </fieldset>
-            <fieldset class="horizontal">
-                <div class="stat">
-                    <label class="uppercase bold">{{localize "Champions.Models.Actor.Characteristics.body"}}</label>
-                    {{formInput fields.combat.fields.body.fields.value value=system.combat.body.value}}
-                    /
-                    {{formInput fields.combat.fields.body.fields.max value=system.combat.body.max}}
+            <fieldset class="vertical">
+                <div class="horizontal">
+                    <div class="stat">
+                        <label class="uppercase bold">{{localize
+                                "Champions.Models.Actor.Characteristics.stunned"}}</label>
+                        {{formInput fields.combat.fields.stunned value=system.combat.stunned}}
+                    </div>
+                    <div class="stat">
+                        <label class="uppercase bold">{{localize
+                                "Champions.Models.Actor.Characteristics.recovery"}}</label>
+                        {{formInput fields.combat.fields.recovery value=system.combat.recovery}}
+                    </div>
                 </div>
-                <div class="stat">
-                    <label class="uppercase bold">{{localize "Champions.Hero.KO"}}</label>
-                    {{formInput fields.combat.fields.knockout.fields.value value=system.combat.knockout.value}}
-                    /
-                    {{formInput fields.combat.fields.knockout.fields.max value=system.combat.knockout.max}}
-                </div>
-                <div class="stat">
-                    <label class="uppercase bold">{{localize "Champions.Hero.End"}}</label>
-                    {{formInput fields.combat.fields.endurance.fields.value value=system.combat.endurance.value}}
-                    /
-                    {{formInput fields.combat.fields.endurance.fields.max value=system.combat.endurance.max}}
+                <div class="horizontal">
+                    <div class="stat">
+                        <label class="uppercase bold">{{localize "Champions.Models.Actor.Characteristics.body"}}</label>
+                        {{formInput fields.combat.fields.body.fields.value value=system.combat.body.value}}
+                        /
+                        {{formInput fields.combat.fields.body.fields.max value=system.combat.body.max}}
+                    </div>
+                    <div class="stat">
+                        <label class="uppercase bold">{{localize "Champions.Hero.KO"}}</label>
+                        {{formInput fields.combat.fields.knockout.fields.value value=system.combat.knockout.value}}
+                        /
+                        {{formInput fields.combat.fields.knockout.fields.max value=system.combat.knockout.max}}
+                    </div>
+                    <div class="stat">
+                        <label class="uppercase bold">{{localize "Champions.Hero.End"}}</label>
+                        {{formInput fields.combat.fields.endurance.fields.value value=system.combat.endurance.value}}
+                        /
+                        {{formInput fields.combat.fields.endurance.fields.max value=system.combat.endurance.max}}
+                    </div>
                 </div>
             </fieldset>
         </div>

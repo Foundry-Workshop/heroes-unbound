@@ -1,5 +1,8 @@
 # Changelog
 
+## v0.3.0
+* Redesign of the Combat tab
+
 ## v0.2.0 - 26-02-2025
 * Renamed the system to `Heroes Unbound`
 

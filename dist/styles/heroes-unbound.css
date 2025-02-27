@@ -331,6 +331,9 @@ body.theme-dark .heroes-unbound.sheet .sheet-list .list-content .list-row:nth-of
 .heroes-unbound.sheet.actor fieldset.horizontal * {
   flex: 0 1 fit-content;
 }
+.heroes-unbound.sheet.actor [data-action] {
+  cursor: pointer;
+}
 .heroes-unbound.sheet.actor .characteristics {
   display: flex;
   flex-direction: column;
@@ -342,9 +345,6 @@ body.theme-dark .heroes-unbound.sheet .sheet-list .list-content .list-row:nth-of
 .heroes-unbound.sheet.actor .characteristics .characteristic .details {
   flex: 5 0 max-content;
   align-self: stretch;
-}
-.heroes-unbound.sheet.actor .characteristics .characteristic .details[data-action] {
-  cursor: pointer;
 }
 .heroes-unbound.sheet.actor .characteristics .characteristic:has(.details:hover) {
   background-color: var(--rowBackground);
@@ -361,26 +361,58 @@ body.theme-dark .heroes-unbound.sheet .sheet-list .list-content .list-row:nth-of
   gap: 5px;
   flex: 5 0 max-content;
   align-self: stretch;
+  justify-content: center;
+  align-items: center;
+  min-height: 24px;
 }
-.heroes-unbound.sheet.actor .combat .stats .stat[data-action] {
-  cursor: pointer;
-}
-.heroes-unbound.sheet.actor .combat .stats .stat:has(.details:hover) {
+.heroes-unbound.sheet.actor .combat .stats .stat:has(> .details:hover) {
   background-color: var(--rowBackground);
 }
 .heroes-unbound.sheet.actor .combat .stats .stat * {
   flex: 1;
+  align-items: center;
 }
 .heroes-unbound.sheet.actor .combat .stats .stat > label {
   flex: 0 1 25%;
   font-size: var(--font-size-14);
   align-content: center;
+  padding: 3px;
 }
-.heroes-unbound.sheet.actor .combat .stats .stat > input {
+.heroes-unbound.sheet.actor .combat .stats .stat input:not([type=checkbox]) {
   flex: 0 1 40px;
+}
+.heroes-unbound.sheet.actor .combat .stats .stat .details {
+  min-height: 24px;
+  display: flex;
 }
 .heroes-unbound.sheet.actor .combat .stats .stat .details > p {
   margin: 0;
+}
+.heroes-unbound.sheet.actor .combat .stats .stat .stat-inputs.row {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+}
+.heroes-unbound.sheet.actor .combat .stats .stat .stat-inputs label {
+  flex: 0 1 80px;
+}
+.heroes-unbound.sheet.actor .combat .stats .stat .stat-inputs .input-group {
+  gap: 10px;
+}
+.heroes-unbound.sheet.actor .combat .stats .stat .stat-inputs .input-group:has(.details:hover) {
+  background-color: var(--rowBackground);
+}
+.heroes-unbound.sheet.actor .combat .stats :has(> [data-action=combatStat]) {
+  align-items: stretch;
+}
+.heroes-unbound.sheet.actor .combat .stats .horizontal {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  justify-content: space-evenly;
+}
+.heroes-unbound.sheet.actor .combat .stats .horizontal .stat {
+  flex: 0;
 }
 .heroes-unbound.sheet.actor .combat .stats .horizontal .stat input {
   width: 40px;
@@ -498,6 +530,9 @@ body.theme-light .heroes-unbound {
 }
 .heroes-unbound.dice-roll.effect-roll .dice-result {
   order: unset;
+}
+.heroes-unbound .self-start {
+  align-self: self-start;
 }
 
 .heroes-unbound #chat-log {

@@ -1169,9 +1169,10 @@ class HeroSheet extends BaseActorSheet {
     const enrichment = await super._handleEnrichment();
 
     enrichment["system.notes"] = await TextEditor.enrichHTML(this.actor.system.notes, {});
-    enrichment["system.combat.initiative"] = await TextEditor.enrichHTML(this.actor.system.combat.initiative, {});
-    enrichment["system.combat.combatValue"] = await TextEditor.enrichHTML(this.actor.system.combat.combatValue, {});
-    enrichment["system.combat.defense"] = await TextEditor.enrichHTML(this.actor.system.combat.defense, {});
+    enrichment["system.combat.defense.ordinary"] = await TextEditor.enrichHTML(this.actor.system.combat.defense.ordinary.notes, {});
+    enrichment["system.combat.defense.resistant"] = await TextEditor.enrichHTML(this.actor.system.combat.defense.resistant.notes, {});
+    enrichment["system.combat.defense.total"] = await TextEditor.enrichHTML(this.actor.system.combat.defense.total.notes, {});
+    enrichment["system.combat.levels"] = await TextEditor.enrichHTML(this.actor.system.combat.levels, {});
 
     debug("[HeroSheet] _handleEnrichment", {sheet: this, enrichment});
     return foundry.utils.expandObject(enrichment);
@@ -1750,10 +1751,32 @@ class CombatModel extends foundry.abstract.DataModel {
     return {
       phases: new fields$1.NumberField({initial: 4}),
 
-      initiative: new fields$1.StringField({nullable: true}),
-      combatValue: new fields$1.StringField({nullable: true}),
+      initiative: new fields$1.SchemaField({
+        physical: new fields$1.NumberField({nullable: true, min: 0}),
+        mental: new fields$1.NumberField({nullable: true, min: 0}),
+      }),
 
-      defense: new fields$1.StringField({nullable: true}),
+      combatValue: new fields$1.SchemaField({
+        physical: new fields$1.NumberField({nullable: true, min: 0}),
+        mental: new fields$1.NumberField({nullable: true, min: 0}),
+      }),
+
+      levels: new fields$1.StringField({nullable: false, blank: false, initial: "<p></p>"}),
+
+      defense: new fields$1.SchemaField({
+        ordinary: new fields$1.SchemaField({
+          value: new fields$1.NumberField({nullable: true, min: 0}),
+          notes: new fields$1.StringField({nullable: false, blank: false, initial: "<p></p>"}),
+        }),
+        resistant: new fields$1.SchemaField({
+          value: new fields$1.NumberField({nullable: true, min: 0}),
+          notes: new fields$1.StringField({nullable: false, blank: false, initial: "<p></p>"}),
+        }),
+        total: new fields$1.SchemaField({
+          value: new fields$1.NumberField({nullable: true, min: 0}),
+          notes: new fields$1.StringField({nullable: false, blank: false, initial: "<p></p>"}),
+        }),
+      }),
 
       stunned: new fields$1.NumberField({nullable: true, min: 0}),
       recovery: new fields$1.NumberField({nullable: true, min: 0}),
@@ -1773,6 +1796,10 @@ class CombatModel extends foundry.abstract.DataModel {
         max: new fields$1.NumberField({nullable: true, min: 0}),
       }),
     };
+  }
+
+  get value() {
+    return this.combatValue;
   }
 
   async savePhases(value) {
@@ -1836,31 +1863,44 @@ class HeroDataModel extends BaseActorDataModel {
   }
 
   prepareDerivedData() {
-    if (this.combat.body.max === null)
-      this.combat.body.max = this.characteristics.body.value;
+    if (this.combat.initiative?.physical === null)
+      this.combat.initiative.physical = this.characteristics.dexterity.value;
+    if (this.combat.combatValue?.physical === null)
+      this.combat.combatValue.physical = this.characteristics.dexterity.value;
 
-    if (this.combat.knockout.max === null)
-      this.combat.knockout.max = this.characteristics.knockout.value;
-
-    if (this.combat.endurance.max === null)
-      this.combat.endurance.max = this.characteristics.endurance.value;
+    if (this.combat.initiative?.mental === null)
+      this.combat.initiative.mental = this.characteristics.ego.value;
+    if (this.combat.combatValue?.mental === null)
+      this.combat.combatValue.mental = this.characteristics.ego.value;
 
 
     if (this.combat.stunned === null)
       this.combat.stunned = this.characteristics.stunned.value;
-
     if (this.combat.recovery === null)
       this.combat.recovery = this.characteristics.recovery.value;
 
 
+    if (this.combat.body.max === null)
+      this.combat.body.max = this.characteristics.body.value;
+    if (this.combat.knockout.max === null)
+      this.combat.knockout.max = this.characteristics.knockout.value;
+    if (this.combat.endurance.max === null)
+      this.combat.endurance.max = this.characteristics.endurance.value;
+
     if (this.combat.body.value === null)
       this.combat.body.value = this.combat.body.max;
-
     if (this.combat.knockout.value === null)
       this.combat.knockout.value = this.combat.knockout.max;
-
     if (this.combat.endurance.value === null)
       this.combat.endurance.value = this.combat.endurance.max;
+
+
+    if (this.combat.defense?.ordinary?.value === null)
+      this.combat.defense.ordinary.value = this.characteristics.ordinary.value;
+    if (this.combat.defense?.resistant?.value === null)
+      this.combat.defense.resistant.value = this.characteristics.resistant.value;
+    if (this.combat.defense?.total?.value === null)
+      this.combat.defense.total.value = this.characteristics.total.value;
 
     this.xp.left = this.xp.earned - this.xp.used;
   }

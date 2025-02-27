@@ -33,31 +33,44 @@ export class HeroDataModel extends BaseActorDataModel {
   }
 
   prepareDerivedData() {
-    if (this.combat.body.max === null)
-      this.combat.body.max = this.characteristics.body.value;
+    if (this.combat.initiative?.physical === null)
+      this.combat.initiative.physical = this.characteristics.dexterity.value;
+    if (this.combat.combatValue?.physical === null)
+      this.combat.combatValue.physical = this.characteristics.dexterity.value;
 
-    if (this.combat.knockout.max === null)
-      this.combat.knockout.max = this.characteristics.knockout.value;
-
-    if (this.combat.endurance.max === null)
-      this.combat.endurance.max = this.characteristics.endurance.value;
+    if (this.combat.initiative?.mental === null)
+      this.combat.initiative.mental = this.characteristics.ego.value;
+    if (this.combat.combatValue?.mental === null)
+      this.combat.combatValue.mental = this.characteristics.ego.value;
 
 
     if (this.combat.stunned === null)
       this.combat.stunned = this.characteristics.stunned.value;
-
     if (this.combat.recovery === null)
       this.combat.recovery = this.characteristics.recovery.value;
 
 
+    if (this.combat.body.max === null)
+      this.combat.body.max = this.characteristics.body.value;
+    if (this.combat.knockout.max === null)
+      this.combat.knockout.max = this.characteristics.knockout.value;
+    if (this.combat.endurance.max === null)
+      this.combat.endurance.max = this.characteristics.endurance.value;
+
     if (this.combat.body.value === null)
       this.combat.body.value = this.combat.body.max;
-
     if (this.combat.knockout.value === null)
       this.combat.knockout.value = this.combat.knockout.max;
-
     if (this.combat.endurance.value === null)
       this.combat.endurance.value = this.combat.endurance.max;
+
+
+    if (this.combat.defense?.ordinary?.value === null)
+      this.combat.defense.ordinary.value = this.characteristics.ordinary.value;
+    if (this.combat.defense?.resistant?.value === null)
+      this.combat.defense.resistant.value = this.characteristics.resistant.value;
+    if (this.combat.defense?.total?.value === null)
+      this.combat.defense.total.value = this.characteristics.total.value;
 
     this.xp.left = this.xp.earned - this.xp.used;
   }

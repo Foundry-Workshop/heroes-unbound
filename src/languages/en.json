@@ -64,7 +64,8 @@
       "Power": "Power",
       "End": "End",
       "KO": "KO",
-      "CombatValue": "OCV/DCV",
+      "Levels": "Levels",
+      "CombatValue": "Combat Value",
       "Initiative": "Initiative",
       "Phases": "Phases",
       "Maneuver": "Maneuver",
@@ -93,6 +94,11 @@
         "Enable": "Debug",
         "EnableHint": "Enable console debug outputs. (client setting)"
       }
+    },
+
+    "Stat": {
+      "Mental": "Mental",
+      "Physical": "Physical"
     }
 
   }

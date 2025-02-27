@@ -48,6 +48,10 @@
         }
       }
 
+      [data-action] {
+        cursor: pointer;
+      }
+
       .characteristics {
         @include flexContainer(column, 3px);
 
@@ -59,10 +63,6 @@
           .details {
             flex: 5 0 max-content;
             align-self: stretch;
-
-            &[data-action] {
-              cursor: pointer;
-            }
           }
 
           &:has(.details:hover) {
@@ -81,36 +81,69 @@
             @include flexContainer(row, 5px);
             flex: 5 0 max-content;
             align-self: stretch;
+            justify-content: center;
+            align-items: center;
+            min-height: 24px;
 
-            &[data-action] {
-              cursor: pointer;
-            }
-
-            &:has(.details:hover) {
+            &:has(> .details:hover) {
               background-color: var(--rowBackground);
             }
 
             * {
               flex: 1;
+              align-items: center;
             }
 
             > label {
               flex: 0 1 25%;
               font-size: var(--font-size-14);
               align-content: center;
+              padding: 3px;
             }
 
-            > input {
+            input:not([type="checkbox"]) {
               flex: 0 1 40px;
             }
 
-            .details > p {
-              margin: 0;
+            .details {
+              min-height: 24px;
+              display: flex;
+
+              > p {
+                margin: 0;
+              }
+            }
+
+            .stat-inputs {
+              &.row {
+                @include flexContainer(row);
+              }
+
+              label {
+                flex: 0 1 80px;
+              }
+
+              .input-group {
+                gap: 10px;
+
+                &:has(.details:hover) {
+                  background-color: var(--rowBackground);
+                }
+              }
             }
           }
 
+          :has(> [data-action="combatStat"]) {
+            align-items: stretch;
+          }
+
           .horizontal {
+            @include flexContainer(row, 5px);
+            justify-content: space-evenly;
+
             .stat {
+              flex: 0;
+
               input {
                 width: 40px;
               }

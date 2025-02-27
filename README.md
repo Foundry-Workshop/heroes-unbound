@@ -1,7 +1,7 @@
 # FoundryVTT - Heroes Unbound
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/Foundry-Workshop/heroes-unbound?style=for-the-badge)
-![Foundry Core Compatible Version](https://img.shields.io/badge/dynamic/json.svg?url=https%3A%2F%2Fraw.githubusercontent.com%2FFFoundry-Workshop%2Fheroes-unbound%2Fmaster%2Fdist%2Fsystem.json&label=Foundry%20Min%20Version&query=$.compatibility.minimum&colorB=orange&style=for-the-badge)
-![Foundry Core Compatible Version](https://img.shields.io/badge/dynamic/json.svg?url=https%3A%2F%2Fraw.githubusercontent.com%2FFFoundry-Workshop%2Fheroes-unbound%2Fmaster%2Fdist%2Fsystem.json&label=Foundry%20Verified&query=$.compatibility.verified&colorB=orange&style=for-the-badge)  
+![Foundry Core Compatible Version](https://img.shields.io/badge/dynamic/json.svg?url=https%3A%2F%2Fraw.githubusercontent.com%2FFoundry-Workshop%2Fheroes-unbound%2Fmaster%2Fdist%2Fsystem.json&label=Foundry%20Min%20Version&query=$.compatibility.minimum&colorB=orange&style=for-the-badge)
+![Foundry Core Compatible Version](https://img.shields.io/badge/dynamic/json.svg?url=https%3A%2F%2Fraw.githubusercontent.com%2FFoundry-Workshop%2Fheroes-unbound%2Fmaster%2Fdist%2Fsystem.json&label=Foundry%20Verified&query=$.compatibility.verified&colorB=orange&style=for-the-badge)  
 ![License](https://img.shields.io/github/license/Foundry-Workshop/heroes-unbound?style=for-the-badge) ![GitHub Releases](https://img.shields.io/github/downloads/Foundry-Workshop/heroes-unbound/latest/module.zip?style=for-the-badge)
 ![GitHub All Releases](https://img.shields.io/github/downloads/Foundry-Workshop/heroes-unbound/module.zip?style=for-the-badge&label=Downloads+total)  
 [![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white&link=https%3A%2F%2Fdiscord.gg%2FXkTFv8DRDc)](https://discord.gg/XkTFv8DRDc)
@@ -42,7 +42,7 @@ This system features:
   - Effect Roll can be performed either by a button on Hero Sheet, or by using `/effect X` command (where `X` is number of d6s) 
 
 ### Content
-This System contains no actual content. A game manual of either **Heroes Unbound** as well as certain level of manual input is required to play the game.
+This System contains no actual content. A game manual of **Heroes Unbound** (or other related system) as well as certain level of manual input is required to play the game.
 
 ## Troubleshooting and Debug
 If you want to have deeper understanding of why system behaves the way it does, **you can enable Debug in system's setting**.

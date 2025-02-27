@@ -106,9 +106,10 @@ export default class HeroSheet extends BaseActorSheet {
     const enrichment = await super._handleEnrichment();
 
     enrichment["system.notes"] = await TextEditor.enrichHTML(this.actor.system.notes, {});
-    enrichment["system.combat.initiative"] = await TextEditor.enrichHTML(this.actor.system.combat.initiative, {});
-    enrichment["system.combat.combatValue"] = await TextEditor.enrichHTML(this.actor.system.combat.combatValue, {});
-    enrichment["system.combat.defense"] = await TextEditor.enrichHTML(this.actor.system.combat.defense, {});
+    enrichment["system.combat.defense.ordinary"] = await TextEditor.enrichHTML(this.actor.system.combat.defense.ordinary.notes, {});
+    enrichment["system.combat.defense.resistant"] = await TextEditor.enrichHTML(this.actor.system.combat.defense.resistant.notes, {});
+    enrichment["system.combat.defense.total"] = await TextEditor.enrichHTML(this.actor.system.combat.defense.total.notes, {});
+    enrichment["system.combat.levels"] = await TextEditor.enrichHTML(this.actor.system.combat.levels, {});
 
     debug("[HeroSheet] _handleEnrichment", {sheet: this, enrichment});
     return foundry.utils.expandObject(enrichment);
